@@ -83,10 +83,11 @@ def przeszukaj_sklepy():
     else:
         wyslij_powiadomienie("Nie znaleziono nowych promocji Old Spice.")
 
-# Harmonogram â codziennie o 9:00
+# Harmonogram - codziennie o 9:00
 schedule.every().day.at("09:00").do(przeszukaj_sklepy)
 
-print("Bot do szukania promocji uruchomiony.")
-while True:
-    schedule.run_pending()
-    time.sleep(60)
+if __name__ == "__main__":
+    print("Bot do szukania promocji uruchomiony.")
+    while True:
+        schedule.run_pending()
+        time.sleep(60)
